@@ -6,18 +6,18 @@
         <h3>Characters</h3>
         <hr>
         <ul>
-            <li>Agumon - fuego</li>
-            <li>Gabumon - fuego</li>
-            <li>Patamon - aire</li>
+            <li *ngFor="let digimon of digimons">{{ digimon.name }} - {{ digimon.type }}</li>
         </ul>
     </div>
     <div class="col">
         <h3>Agregar</h3>
         <hr>
-        <form>
-            <input placeholder="Name" type="text"/>
-            <input placeholder="Type" type="text"/>
-            <button>Add</button>
+        <form (ngSubmit)="add()">
+            <input placeholder="Name" name="name" type="text" [(ngModel)]="digimon.name"/>
+            <input placeholder="Type" name="type" type="text" [(ngModel)]="digimon.type"/>
+            <button type="submit">
+                Add
+            </button>
         </form>
     </div>
 </div>
