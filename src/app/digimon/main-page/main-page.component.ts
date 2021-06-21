@@ -1,7 +1,7 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
-import { Digimon } from '../../models/Digimon';
+import { Digimon } from '../../models/Digimon.interface';
 
 @Component({
   selector: 'app-main-page',
@@ -35,15 +35,7 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  add(){
-    if(this.digimon.name.trim().length === 0 && this.digimon.type.trim().length === 0){
-      return;
-    }
-    console.log(this.digimon);
-    this.digimons.push(this.digimon);
-    this.digimon = {
-      name: '',
-      type: ''
-    }
+  addNewCharacter( digimon: Digimon ){
+    this.digimons.push(digimon);
   }
 }

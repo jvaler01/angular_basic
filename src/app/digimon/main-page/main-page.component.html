@@ -3,21 +3,11 @@
 
 <div class="row">
     <div class="col">
-        <h3>Characters</h3>
-        <hr>
-        <ul>
-            <li *ngFor="let digimon of digimons">{{ digimon.name }} - {{ digimon.type }}</li>
-        </ul>
+        <app-characters [digimons]="digimons">
+        </app-characters>
     </div>
     <div class="col">
-        <h3>Agregar</h3>
-        <hr>
-        <form (ngSubmit)="add()">
-            <input placeholder="Name" name="name" type="text" [(ngModel)]="digimon.name"/>
-            <input placeholder="Type" name="type" type="text" [(ngModel)]="digimon.type"/>
-            <button type="submit">
-                Add
-            </button>
-        </form>
+        <app-add [digimon]="digimon" (onNewCharacter)="addNewCharacter( $event )">
+        </app-add>
     </div>
 </div>

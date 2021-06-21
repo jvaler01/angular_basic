@@ -1,0 +1,9 @@
+<h3>Agregar</h3>
+<hr>
+<form (ngSubmit)="add()">
+    <input placeholder="Name" name="name" type="text" [(ngModel)]="digimon.name"/>
+    <input placeholder="Type" name="type" type="text" [(ngModel)]="digimon.type"/>
+    <button type="submit">
+        Add
+    </button>
+</form>
