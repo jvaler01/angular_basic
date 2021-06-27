@@ -15,27 +15,27 @@ export class MainPageComponent implements OnInit {
     type: ''
   };
 
-  digimons: Digimon[] = [
-    {
-      name: 'Agumon',
-      type: 'fire'
-    },
-    {
-      name: 'Gabumon',
-      type: 'fire'
-    },
-    {
-      name: 'Patamon',
-      type: 'flying'
-    }
-  ];
+  // digimons: Digimon[] = [
+  //   {
+  //     name: 'Agumon',
+  //     type: 'fire'
+  //   },
+  //   {
+  //     name: 'Gabumon',
+  //     type: 'fire'
+  //   },
+  //   {
+  //     name: 'Patamon',
+  //     type: 'flying'
+  //   }
+  // ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addNewCharacter( digimon: Digimon ){
-    this.digimons.push(digimon);
-  }
+  // addNewCharacter( digimon: Digimon ){
+  //   this.digimons.push(digimon);
+  // }
 }

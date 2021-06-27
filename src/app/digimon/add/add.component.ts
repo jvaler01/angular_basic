@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Digimon } from '../../models/Digimon.interface';
+import { DigimonService } from '../services/digimon.service';
 
 @Component({
   selector: 'app-add',
@@ -14,10 +15,10 @@ export class AddComponent implements OnInit {
     type: ''
   };
 
-  @Output()
-  onNewCharacter: EventEmitter<Digimon> = new EventEmitter();
+  // @Output()
+  // onNewCharacter: EventEmitter<Digimon> = new EventEmitter();
 
-  constructor() { }
+  constructor( private digimonService: DigimonService) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +28,8 @@ export class AddComponent implements OnInit {
       return;
     }
     console.log(this.digimon);
-    this.onNewCharacter.emit( this.digimon );
+    // this.onNewCharacter.emit( this.digimon );
+    this.digimonService.addDigimon(this.digimon);
     this.digimon = {
       name: '',
       type: ''
