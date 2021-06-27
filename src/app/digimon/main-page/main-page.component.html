@@ -3,11 +3,15 @@
 
 <div class="row">
     <div class="col">
-        <app-characters [digimons]="digimons">
+        <!-- <app-characters [digimons]="digimons">
+        </app-characters> -->
+        <app-characters>
         </app-characters>
     </div>
     <div class="col">
-        <app-add [digimon]="digimon" (onNewCharacter)="addNewCharacter( $event )">
+        <!-- <app-add [digimon]="digimon" (onNewCharacter)="addNewCharacter( $event )">
+        </app-add> -->
+        <app-add [digimon]="digimon">
         </app-add>
     </div>
 </div>

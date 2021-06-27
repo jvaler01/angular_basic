@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Digimon } from '../../models/Digimon.interface';
+import { DigimonService } from '../services/digimon.service';
 
 @Component({
   selector: 'app-characters',
@@ -8,10 +10,13 @@ import { Digimon } from '../../models/Digimon.interface';
 })
 export class CharactersComponent implements OnInit {
 
-  @Input()
-  digimons: Digimon[]= [];
+  //@Input()
+  //digimons: Digimon[]= [];
+  get digimons(){
+    return this.digimonService.digimons;
+  }
 
-  constructor() { }
+  constructor( private digimonService: DigimonService ) { }
 
   ngOnInit(): void {
   }
